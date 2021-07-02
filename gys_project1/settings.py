@@ -17,6 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 env_list = dict()
 
+# 파일 경로
 local_env = open(os.path.join(BASE_DIR, '.env'))
 
 while True:
