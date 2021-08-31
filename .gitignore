@@ -84,3 +84,6 @@ __pycache__/
 media/
 
 staticfiles/
+
+gis_3ban_gcp
+gis_3ban_gcp.pub
