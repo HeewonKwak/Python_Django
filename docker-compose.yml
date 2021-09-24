@@ -1,0 +1,29 @@
+version: "3.7"
+
+services:
+
+  nginx:
+    image: nginx:1.19.5
+    ports:
+      - 80:80
+    networks:
+      - gis_3ban_network
+    volumes:
+      - /home/hewo1217/nginx.conf:/etc/nginx/nginx.conf
+      - gis_3ban_static:/data/static/
+      - gis_3ban_media:/data/media/
+
+  django:
+    image: gis_3ban:3
+    networks:
+      - gis_3ban_network
+    volumes:
+      - gis_3ban_static:/home/Python_Django/staticfiles/
+      - gis_3ban_media:/home/Python_Django/media/
+
+networks:
+  gis_3ban_network:
+
+volumes:
+  gis_3ban_static:
+  gis_3ban_media:
